@@ -31,15 +31,24 @@
 <i class="fas fa-search"></i>
 
 <!-- DISPLAY THE CELEBRITY USER CHOOSES HERE-->
-<!-- Scripting for search box onclick button-->
+<!-- Scripting for search box onclick button START-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-    $(document).on("click", function () {
+
+    $("#search-box").on("click", function () {
+        //this piece of the function takes 
         var searchbox = $("#search-box").val().trim();
         $("#celeb-name-here").html(searchbox.toUpperCase());
+        console.log(searchbox)
+        var card = $(".card")
+        var card_body = $(".card-body")
+        $("#profiles").append(card)
+        card.append('<img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">')
+        card.append('<h5 class="card-title">' + searchbox.toUpperCase() + '</h5>')
+        card.append('<a href="..." class="btn btn-primary">LOAD PROFILE</a>')
     });
 </script>
-<!-- Scripting for onclick button END-->
+<!-- Scripting for search box onclick button END-->
 <div class=container id="celeb-name">
     <h4>YOU'RE OBSESSED WITH</h4>
     <h1 id="celeb-name-here">CELEBRITY NAME HERE</h1>
@@ -47,7 +56,15 @@
 
 
 <!-- GOOGLE IMAGES API -->
-
+<!--Scripting for Image Carousel START-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $("#search-box").on("click", function () {
+        var searchbox = $("#search-box").val().trim();
+        console.log(searchbox);
+    });
+</script>
+<!--Scripting for Image Carousel END-->
 <div class=container>
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -76,7 +93,15 @@
 
 
 <!-- PINTEREST API -->
-
+<!--Scripting for Pinterest START-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).on("click", function () {
+        var searchbox = $("#search-box").val().trim();
+        console.log(searchbox);
+    });
+</script>
+<!--Scripting for Pinterest END-->
 <div class=container id="pinterest">
     <h4>PINTEREST</h4>
     <h1>GET INSPIRED<br>BY THEIR<br>STYLE</h1>
@@ -84,7 +109,22 @@
 
 
 <!-- EBAY API -->
-
+<!--Scripting for Pinterest START-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).on("click", function () {
+        var searchbox = $("#search-box").val().trim();
+        console.log(searchbox);
+    });
+</script>
+<!--Scripting for Pinterest END-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).on("click", function () {
+        var searchbox = $("#search-box").val().trim();
+        console.log(searchbox);
+    });
+</script>
 <div class=container id="ebay">
     <h4>EBAY</h4>
     <h1>MERCHANDISE</h1>
@@ -99,7 +139,7 @@
 </div>
 
 <!-- POPULATES ALL SEARCHED QUERIES HERE -->
-<div class=container>
+<div class=container id="profiles">
 
     <div class="card" style="width: 18rem;">
         <img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">
