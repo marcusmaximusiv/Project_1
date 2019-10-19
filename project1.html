@@ -30,7 +30,7 @@
 <div class="center">
     <input type="text" id="search-box" value=" TYPE IN YOUR FAV CELEB">
     <i class="fas fa-search"></i>
-    <button type="button" class="btn btn-dark">GO</button>
+    <button type="button" class="btn btn-dark" id="input">GO</button>
 </div>
 <br>
 
@@ -39,7 +39,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 
-    $("#search-box").on("click", function () {
+    $("#input").on("click", function () {
         //this piece of the function takes 
         var searchbox = $("#search-box").val().trim();
         $("#celeb-name-here").html(searchbox.toUpperCase());
