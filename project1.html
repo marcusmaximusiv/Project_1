@@ -33,6 +33,7 @@
     <button type="button" class="btn btn-dark" id="input">GO</button>
 </div>
 <br>
+<br>
 
 <!-- DISPLAY THE CELEBRITY USER CHOOSES HERE-->
 <!-- Scripting for search box onclick button START-->
@@ -44,12 +45,13 @@
         var searchbox = $("#search-box").val().trim();
         $("#celeb-name-here").html(searchbox.toUpperCase());
         console.log(searchbox)
-        var card = $(".card")
-        var card_body = $(".card-body")
+        var card = $('<div>').addClass("card")
+        var card_body = $('<div>').addClass("card-body")
         $("#profiles").append(card)
         card.append('<img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">')
-        card.append('<h5 class="card-title">' + searchbox.toUpperCase() + '</h5>')
-        card.append('<a href="..." class="btn btn-primary">LOAD PROFILE</a>')
+        card.append(card_body)
+        card_body.append('<h5 class="card-title">' + searchbox.toUpperCase() + '</h5>')
+        card_body.append('<a href="..." class="btn btn-primary">LOAD PROFILE</a>')
     });
 </script>
 <!-- Scripting for search box onclick button END-->
