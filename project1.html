@@ -31,6 +31,15 @@
 <i class="fas fa-search"></i>
 
 <!-- DISPLAY THE CELEBRITY USER CHOOSES HERE-->
+<!-- Scripting for search box onclick button-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).on("click", function () {
+        var searchbox = $("#search-box").val().trim();
+        $("#celeb-name-here").html(searchbox.toUpperCase());
+    });
+</script>
+<!-- Scripting for onclick button END-->
 <div class=container id="celeb-name">
     <h4>YOU'RE OBSESSED WITH</h4>
     <h1 id="celeb-name-here">CELEBRITY NAME HERE</h1>
@@ -38,6 +47,7 @@
 
 
 <!-- GOOGLE IMAGES API -->
+
 <div class=container>
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
