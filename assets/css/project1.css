@@ -9,16 +9,50 @@ h4 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight:400;
     font-size: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.container {
+    margin-bottom: 50px;
+}
+#celeb-name-here {
+    font-size: 95px;
 }
 
 #search-box {
-    margin: 0, auto;
-    padding: 10px;
+
+    padding-left: 200px;
+    padding-right:200px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     border-style: solid;
-    border-width: 5px;
+    border-width: 8px;
+    margin-bottom:100px;
 }
 
 .card {
     display: inline-block;
+
+}
+
+.center {
+    margin: 0, auto;
+    text-align: center;
+    margin-top: 250px;
+    margin-bottom: 200px;
+}
+
+.btn {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight:700;
+    padding-left: 50px;
+    padding-right:50px;
+    padding-top: 35px;
+    padding-bottom: 30px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 0;
+    margin-top: 0;
 
 }
