@@ -1,3 +1,9 @@
+body {
+    /* background: rgb(5,21,55);
+    background: linear-gradient(180deg, rgba(5,21,55,1) 0%, rgba(8,116,164,1) 49%, rgba(72,156,201,1) 100%); */
+    background: rgb(17,26,41);
+    background: linear-gradient(180deg, rgba(17,26,41,1) 0%, rgba(54,59,68,1) 50%, rgba(66,60,55,1) 100%);
+}
 h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight:700;
@@ -8,9 +14,10 @@ h1 {
 h4 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight:400;
-    font-size: 15px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 40px;
     letter-spacing: 5px;
+    color: #dadada;
 }
 
 .container {
@@ -20,15 +27,21 @@ h4 {
 
 #celeb-name-here {
     font-size: 95px;
+    color: #ffffff;
 }
 
 #search-box {
-    padding-left: 200px;
-    padding-right:200px;
+    padding-left: 50px;
+    padding-right:50px;
     padding-top: 30px;
     padding-bottom: 30px;
     border-style: solid;
     border-width: 8px;
+    border-color: #ffffff;
+    background-color: #dbe1e9;
+    width:50%;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
 
 }
 
@@ -40,8 +53,6 @@ h4 {
 .center {
     margin: 0, auto;
     text-align: center;
-    /* margin-top: 250px;
-    margin-bottom: 200px; */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -56,9 +67,19 @@ h4 {
     padding-top: 35px;
     padding-bottom: 32px;
     border-style: solid;
+    border-color: #ffffff;
     border-width: 5px;
     border-radius: 0;
     margin-top: 0;
     margin-bottom: 5px;
+    background: #182848;
+    color: #ffffff;
+    /* background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%); */
 
+}
+
+#card {
+    font-family: 'Josefin Sans', sans-serif;
+background-color: none;
+margin-right: 20px;
 }
