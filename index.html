@@ -229,10 +229,10 @@
         }).then(function (response) {
             console.log(response);
             console.log($("#pic1"))
-            $("#currentimage").html('<img src="' + response.data[0].images.fixed_height.url + '" >')
-            $("#image2").html('<img src="' + response.data[1].images.fixed_height.url + '">')
+            $("#currentimage").html('<img src="' + response.data[0].images.fixed_height.url + '" id="image1" >')
+            $("#image2").html('<img src="' + response.data[1].images.fixed_height.url + '" id="image2" >')
             console.log($("#image2"))
-            $("#image3").html('<img src="' + response.data[2].images.fixed_height.url + '">')
+            $("#image3").html('<img src="' + response.data[2].images.fixed_height.url + '" id="image3" >')
             $(".card-img-top").attr("src", response.data[0].images.fixed_height_still.url)
         });
     });
