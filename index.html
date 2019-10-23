@@ -52,7 +52,8 @@
             var card = $('<div>').addClass("card")
             var card_body = $('<div>').addClass("card-body")
             $("#profiles").append(card)
-            card.append('<img src="assets/images/placement-image.jpg" class="card-img-top" id="cardimage" alt="...">')
+            card.append('<img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">')
+            $(".card-img-top").attr("id", "cardimage")
             card.append(card_body)
             card_body.append('<h5 class="card-title">' + searchbox.toUpperCase() + '</h5>')
             card_body.append('<a href="..." class="btn btn-primary">LOAD PROFILE</a>')
@@ -70,30 +71,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--Scripting for Image Carousel END-->
     <div class="container">
-
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active" id="currentimage">
-                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic1" alt="...">
+                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic1"
+                        alt="First Slide">
                 </div>
                 <div class="carousel-item" id="image2">
-                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic2" alt="...">
+                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic2"
+                        alt="Second Slide">
                 </div>
                 <div class="carousel-item" id="image3">
-                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic3" alt="...">
+                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic3"
+                        alt="Third Slide">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
 
     </div>
+    <br>
 
 
     <!-- PINTEREST API -->
@@ -211,10 +220,11 @@
         }).then(function (response) {
             console.log(response);
             console.log($("#pic1"))
-            $("#currentimage").html('<img src="' + response.data[0].images.fixed_height.url + '">')
+            $("#currentimage").html('<img src="' + response.data[0].images.fixed_height.url + '" >')
             $("#image2").html('<img src="' + response.data[1].images.fixed_height.url + '">')
+            console.log($("#image2"))
             $("#image3").html('<img src="' + response.data[2].images.fixed_height.url + '">')
-            $("#cardimage").attr("src", response.data[0].images.fixed_height_still.url)
+            $(".card-img-top").attr("src", response.data[0].images.fixed_height_still.url)
         });
     });
 </script>
