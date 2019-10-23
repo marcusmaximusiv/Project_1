@@ -203,7 +203,7 @@
     $("#input").on("click", function () {
         var searchbox = $("#search-box").val().trim();
         console.log(searchbox);
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchbox + "&api_key=RWpS1BhCyt7lvwnIpnSbv4S2JkGl5VHu&limit=3";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchbox + "&api_key=RWpS1BhCyt7lvwnIpnSbv4S2JkGl5VHu&limit=3";
         // Creating an AJAX call for the specific movie button being clicked
         $.ajax({
             url: queryURL,
