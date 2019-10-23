@@ -1,9 +1,25 @@
+html { 
+
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+  }
+
 body {
-    /* background: rgb(5,21,55);
-    background: linear-gradient(180deg, rgba(5,21,55,1) 0%, rgba(8,116,164,1) 49%, rgba(72,156,201,1) 100%); */
+
     background: rgb(17,26,41);
     background: linear-gradient(180deg, rgba(17,26,41,1) 0%, rgba(54,59,68,1) 50%, rgba(66,60,55,1) 100%);
 }
+
+#bg-img {
+    background-image: url("../images/celeb-bg.png"); 
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
 h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight:700;
@@ -94,4 +110,13 @@ margin-right: 20px;
 
 #image3{
     height: 500px;
+}
+
+#logo{
+    height: 80px;
+    margin-top: 30px;
+    text-align: center;
+
+
+
 }
