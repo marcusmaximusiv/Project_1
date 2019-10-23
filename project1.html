@@ -52,7 +52,7 @@
             var card = $('<div>').addClass("card")
             var card_body = $('<div>').addClass("card-body")
             $("#profiles").append(card)
-            card.append('<img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">')
+            card.append('<img src="assets/images/placement-image.jpg" class="card-img-top" id="cardimage" alt="...">')
             card.append(card_body)
             card_body.append('<h5 class="card-title">' + searchbox.toUpperCase() + '</h5>')
             card_body.append('<a href="..." class="btn btn-primary">LOAD PROFILE</a>')
@@ -68,25 +68,19 @@
     <!-- GOOGLE IMAGES API -->
     <!--Scripting for Image Carousel START-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $("#input").on("click", function () {
-            var searchbox = $("#search-box").val().trim();
-            console.log(searchbox);
-        });
-    </script>
     <!--Scripting for Image Carousel END-->
     <div class="container">
 
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-item active" id="currentimage">
+                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic1" alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-item" id="image2">
+                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic2" alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-item" id="image3">
+                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic3" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -205,5 +199,24 @@
 
 
 </body>
+<script>
+    $("#input").on("click", function () {
+        var searchbox = $("#search-box").val().trim();
+        console.log(searchbox);
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchbox + "&api_key=RWpS1BhCyt7lvwnIpnSbv4S2JkGl5VHu&limit=3";
+        // Creating an AJAX call for the specific movie button being clicked
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            console.log($("#pic1"))
+            $("#currentimage").html('<img src="' + response.data[0].images.fixed_height.url + '">')
+            $("#image2").html('<img src="' + response.data[1].images.fixed_height.url + '">')
+            $("#image3").html('<img src="' + response.data[2].images.fixed_height.url + '">')
+            $("#cardimage").attr("src", response.data[0].images.fixed_height_still.url)
+        });
+    });
+</script>
 
 </html>
