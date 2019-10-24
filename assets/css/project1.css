@@ -12,14 +12,27 @@ body {
     background: linear-gradient(180deg, rgba(17,26,41,1) 0%, rgba(54,59,68,1) 50%, rgba(66,60,55,1) 100%);
 }
 
+#logo{
+    height: 80px;
+    margin-top: 30px;
+    text-align: center;
+    background-position: center;
+}
 #bg-img {
-    background-image: url("../images/celeb-bg.png"); 
-    /* background-size: contain; */
+    background-image: url("../images/celeb-bg-2.png"); 
     background-repeat: no-repeat;
     background-position: center;
+    background-size: auto;
 
 }
 
+ #bg-carousel{
+    background-image: url("../images/giphy-bg.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
 h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight:700;
@@ -41,6 +54,9 @@ h4 {
     min-height: 100vh;
 }
 
+#celeb-name {
+    margin-top: 50px;
+}
 #celeb-name-here {
     font-size: 95px;
     color: #ffffff;
@@ -88,7 +104,7 @@ h4 {
     border-radius: 0;
     margin-top: 0;
     margin-bottom: 5px;
-    background: #182848;
+    background: #f24179;
     color: #ffffff;
     /* background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%); */
 
@@ -112,11 +128,3 @@ margin-right: 20px;
     height: 500px;
 }
 
-#logo{
-    height: 80px;
-    margin-top: 30px;
-    text-align: center;
-
-
-
-}

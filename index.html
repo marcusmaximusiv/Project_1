@@ -39,10 +39,6 @@
 
 <body>
 
-    <!-- <div class="second-body">
-        <img src="assets/images/celeb-bg.png">
-    </div> -->
-
     <!-- <img src="assets/images/public-eye-logo-03.png" id="logo"> -->
 
 
@@ -76,47 +72,54 @@
         });
     </script>
     <!-- Scripting for search box onclick button END-->
-    <div class="container" style="text-align: center;" id="celeb-name">
-        <h4>WE'VE GOT THE GOODS ON</h4>
-        <h1 id="celeb-name-here">NAME HERE</h1>
-    </div>
+
 
 
     <!-- GOOGLE IMAGES API -->
     <!--Scripting for Image Carousel START-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--Scripting for Image Carousel END-->
-    <div class="container">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active" id="currentimage">
-                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic1"
-                        alt="First Slide">
-                </div>
-                <div class="carousel-item" id="image2">
-                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic2"
-                        alt="Second Slide">
-                </div>
-                <div class="carousel-item" id="image3">
-                    <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic3"
-                        alt="Third Slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+    <div id="bg-carousel">
+
+        <!-- CELEB NAME HERE-->
+        <div style="text-align: center;" id="celeb-name">
+            <a id="cele-display-name">
+                <h4>WE'VE GOT THE GOODS ON</h4>
+                <h1 id="celeb-name-here">NAME HERE</h1>
             </a>
         </div>
 
+        <div class="container">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" id="currentimage">
+                        <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic1"
+                            alt="First Slide">
+                    </div>
+                    <div class="carousel-item" id="image2">
+                        <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic2"
+                            alt="Second Slide">
+                    </div>
+                    <div class="carousel-item" id="image3">
+                        <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic3"
+                            alt="Third Slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
     </div>
     <br>
 
