@@ -29,7 +29,7 @@ body {
  #bg-carousel{
     background-image: url("../images/giphy-bg.png"); 
     background-repeat: no-repeat;
-    background-position: center;
+    /* background-position: center; */
     background-size: contain;
 
 }
@@ -54,13 +54,13 @@ h4 {
     min-height: 100vh;
 }
 
-#celeb-name {
-    margin-top: 50px;
-}
+
 #celeb-name-here {
     font-size: 95px;
     color: #ffffff;
+    text-shadow: 2px 2px 10px black;
 }
+
 
 #search-box {
     padding-left: 50px;
@@ -117,14 +117,70 @@ margin-right: 20px;
 }
 
 #image1{
-    height:500px;
+    height: 70vh;
+    border-style: solid;
+    border-width: 10px;
+    border-color: black;
 }
 
 #image2{
-    height: 500px;
+    /* height: 500px; */
+    height: 70vh;
+    border-style: solid;
+    border-width: 10px;
+    border-color: black;
 }
 
 #image3{
-    height: 500px;
+    height: 70vh;
+    border-style: solid;
+    border-width: 10px;
+    border-color: black;
 }
 
+#pinterest {
+text-align: left;
+margin-top: 80px;
+color:#f24179;
+}
+
+#ebay-bg{
+    background-image: url("../images/ebay-bg.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+#ebay-text {
+text-align: right;
+margin-top: 80px;
+color:#b84d6f;
+}
+
+#pinterest-bg{
+    background-image: url("../images/pinterest-bg.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+#social-bg {
+    background-image: url("../images/social-bg.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+#searches-bg{
+    background-image: url("../images/searches-bg.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;  
+}
+
+#twitter{
+    text-align: left;
+margin-top: 80px;
+color:#f24179;
+padding-bottom: 30px;
+}
