@@ -235,7 +235,7 @@
                             $('#etsy-images').empty();
                             if (data.count > 0) {
                                 $.each(data.results, function (i, item) {
-                                    $("<img/>").attr("src", item.Images[0].url_75x75).appendTo("#etsy-images").wrap(
+                                    $("<img/>").attr("class", "etsy-image").attr("src", item.Images[0].url_75x75).appendTo("#etsy-images").wrap(
                                         "<a href='" + item.url + "'></a>"
                                     );
                                     $("<img/>").attr("id", "etsy-padding");
