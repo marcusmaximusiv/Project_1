@@ -1,7 +1,17 @@
-// giffy api pseudo code
-
-// grabs the value user types into the input area
-
-// Perforn an AJAX GET request from the Giphy URL
-
-//replace placeholders to show gif in the card
+var celebAdvice = [];
+$("#adviceButton").on("click", function () {
+    console.log("click");
+    var queryURL = "https://api.adviceslip.com/advice";
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        data = JSON.parse(response);
+        console.log(data.slip.advice);
+        $("#showAdvice").text(data.slip.advice);
+        $(".getAdvice").show(response.data.slip);
+        celebAdvice.push(response.data.slip);
+        $("#showAdvice").html(celebAdvice[0]);
+        alert(response.data);
+    });
+})

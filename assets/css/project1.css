@@ -12,18 +12,31 @@ body {
     background: linear-gradient(180deg, rgba(17,26,41,1) 0%, rgba(54,59,68,1) 50%, rgba(66,60,55,1) 100%);
 }
 
+
+#canvas-image {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.logo-div{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
 #logo{
     height: 80px;
-    margin-top: 30px;
-    text-align: center;
-    background-position: center;
 }
-#bg-img {
-    background-image: url("../images/celeb-bg-2.png"); 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto;
 
+#canvas-image-blending{
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
 }
 
  #bg-carousel{
@@ -31,7 +44,12 @@ body {
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size: contain;
+    width: 100vw;
 
+}
+
+#carousel-wrapper{
+    padding-top: 600px;
 }
 h1 {
     font-family: 'Josefin Sans', sans-serif;
@@ -85,7 +103,7 @@ h4 {
 .center {
     margin: 0, auto;
     text-align: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,6 +175,16 @@ margin-top: 80px;
 color:#b84d6f;
 }
 
+#etsy-images{
+margin-top:10px,10px,10px,10px;
+height: 50px;
+
+}
+
+/* img{
+    padding: 30px;
+} */
+
 #pinterest-bg{
     background-image: url("../images/pinterest-bg.png"); 
     background-repeat: no-repeat;
@@ -184,3 +212,58 @@ margin-top: 80px;
 color:#f24179;
 padding-bottom: 30px;
 }
+
+#advice{
+text-align: left;
+ margin-top: 80px;
+ color:#f24179;
+ padding-bottom: 30px;
+ }
+
+
+ .advice-div{
+    border-style: solid;
+    border-width: 8px;
+    border-color: #485563;
+    width:70%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    background-color:  #485563;
+ }
+
+ #adviceButton{
+margin-top: 20px;
+margin-bottom: 20px;
+margin-left: 30px;
+background-color:  #737b83;
+width:90%;
+ }
+
+
+ #showAdvice{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    text-align: left;
+    letter-spacing: 0px;
+    color:#ffffff;
+ }
+ .getAdvice{
+    margin-top: 100px;
+
+    padding-bottom: 30px;
+    font-weight:700;
+    padding-left: 50px;
+    padding-right:50px;
+    padding-top: 35px;
+    padding-bottom: 32px;
+    /* border-style: solid;
+    border-color: #ffffff;
+    border-width: 5px; */
+    border-radius: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+ }
+
+ /* #social-btn{
+
+ } */

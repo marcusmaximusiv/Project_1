@@ -19,8 +19,6 @@
         href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <!--Boostrap script-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -38,212 +36,289 @@
 <!-- SEARCH BAR-->
 
 <body>
+    <div>
 
-    <!-- <img src="assets/images/public-eye-logo-03.png" id="logo"> -->
+        <!-- LANDING PAGE ======================================================================  -->
+        <!-- START // MOVING GRADIENT BG / GRANIM -->
+        <canvas id="canvas-image-blending"></canvas>
 
+        <div class="center" id="bg-img">
+            <div class="logo-div">
+                <!-- LOGO -->
+                <img src="assets/images/public-eye-logo-03.png" id="logo">
+            </div>
+            <div>
 
-    <div class="center" id="bg-img">
+                <input type="text" id="search-box" onfocus="this.value=''" value="Type in your Favorite Celebrity">
+                <i class="fas fa-search"></i>
+                <button type="button" class="btn btn-dark" id="input"> GO</button>
+            </div>
+
+        </div>
         <div>
-            <input type="text" id="search-box" onfocus="this.value=''" value="Type in your Favorite Celebrity">
-            <i class="fas fa-search"></i>
-            <button type="button" class="btn btn-dark" id="input"> GO</button>
         </div>
 
-    </div>
-    <br>
-    <br>
+        <!-- Call the script -->
+        <script src="assets/javascript/granim.min.js"></script>
 
-    <!-- DISPLAY THE CELEBRITY USER CHOOSES HERE-->
-    <!-- Scripting for search box onclick button START-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $("#input").on("click", function () {
-            var searchbox = $("#search-box").val().trim();
-            $("#celeb-name-here").html(searchbox.toUpperCase());
-            console.log(searchbox)
-            var card = $('<div>').addClass("card")
-            var card_body = $('<div>').addClass("card-body")
-            $("#profiles").append(card)
-            card.append('<img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">')
-            $(".card-img-top").attr("id", "cardimage")
-            card.append(card_body)
-            card_body.append('<h5 class="card-title">' + searchbox.toUpperCase() + '</h5>')
-            card_body.append('<a href="..." class="btn btn-primary">LOAD PROFILE</a>')
-            $("#pinterest-celeb-name").html(searchbox.toUpperCase() + "'S'")
-        });
-    </script>
-    <!-- Scripting for search box onclick button END-->
+        <!-- Create a Granim instance -->
+        <script>
+            var granimInstance = new Granim({
+                element: '#canvas-image-blending',
+                direction: 'top-bottom',
+                isPausedWhenNotInView: true,
+                image: {
+                    source: 'assets/images/celeb-bg-2.png',
+                    blendingMode: 'multiply'
+                },
+                states: {
+                    "default-state": {
+                        gradients: [
+                            ['#29323C', '#485563'],
+                            ['#FF6B6B', '#8E3838'],
+                            ['#61AA9C', '#70D7FC'],
+                            ['#84A4B2', '#EF9797']
+                        ],
+                        transitionSpeed: 5000
+                    }
+                }
+            });
+        </script>
+        <!-- END // MOVING GRADIENT BG / GRANIM -->
+
+
+        <!-- DISPLAY THE CELEBRITY USER CHOOSES HERE-->
+        <!-- Scripting for search box onclick button START-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $("#input").on("click", function () {
+                var searchbox = $("#search-box").val().trim();
+                $("#celeb-name-here").html(searchbox.toUpperCase());
+                console.log(searchbox)
+                var card = $('<div>').addClass("card")
+                var card_body = $('<div>').addClass("card-body")
+                $("#profiles").append(card)
+                card.append('<img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">')
+                $(".card-img-top").attr("id", "cardimage")
+                card.append(card_body)
+                card_body.append('<h5 class="card-title">' + searchbox.toUpperCase() + '</h5>')
+                card_body.append('<a href="..." class="btn btn-primary">LOAD PROFILE</a>')
+                $("#pinterest-celeb-name").html(searchbox.toUpperCase() + "'S'")
+                $("#quote-celeb-name").html(searchbox.toUpperCase())
+                $("#fb").attr("onclick", `window.location.href = "https://www.facebook.com/search/top/?q=${searchbox}"`)
+                $("#tw").attr("onclick", `window.location.href = "https://www.twitter.com/search?q=${searchbox}"`)
+                $('html, body').animate({
+                    scrollTop: $("#celeb-name").offset().top
+                }, 1500);
+            });
+        </script>
+        <!-- Scripting for search box onclick button END-->
 
 
 
-    <!-- GOOGLE IMAGES API -->
-    <!--Scripting for Image Carousel START-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!--Scripting for Image Carousel END-->
-    <div id="bg-carousel">
 
-        <!-- CELEB NAME HERE-->
-        <div style="text-align: center;" id="celeb-name">
-            <a id="cele-display-name">
-                <h4>WE'VE GOT THE GOODS ON</h4>
-                <h1 id="celeb-name-here">NAME HERE</h1>
-            </a>
-        </div>
+        <!-- GIPHY IMAGES API ======================================================================  -->
 
-        <div class="container">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" id="currentimage">
-                        <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic1"
-                            alt="First Slide">
-                    </div>
-                    <div class="carousel-item" id="image2">
-                        <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic2"
-                            alt="Second Slide">
-                    </div>
-                    <div class="carousel-item" id="image3">
-                        <img src="assets/images/placement-image-carousel-02.jpg" class="d-block w-100" id="pic3"
-                            alt="Third Slide">
+        <!--Scripting for Image Carousel START-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--Scripting for Image Carousel END-->
+        <div id="carousel-wrapper">
+            <div id="bg-carousel">
+
+                <!-- CELEB NAME HERE-->
+                <div style="text-align: center;" id="celeb-name">
+                    <a id="cele-display-name">
+                        <h4>WE'VE GOT THE GOODS ON</h4>
+                        <h1 id="celeb-name-here">NAME HERE</h1>
+                    </a>
+                </div>
+
+                <div class="container">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" id="currentimage">
+                                <img src="" class="d-block w-100" id="pic1" alt="First Slide">
+                            </div>
+                            <div class="carousel-item" id="image2">
+                                <img src="" class="d-block w-100" id="pic2" alt="Second Slide">
+                            </div>
+                            <div class="carousel-item" id="image3">
+                                <img src="" class="d-block w-100" id="pic3" alt="Third Slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
-    </div>
-    <br>
+        <br>
 
+        <!-- PINTEREST API ======================================================================  -->
 
-    <!-- PINTEREST API -->
-    <!--Scripting for Pinterest START-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $("#input").on("click", function () {
-            var searchbox = $("#search-box").val().trim();
-            console.log(searchbox);
-        });
-    </script>
-    <!--Scripting for Pinterest END-->
-
-    <div id="pinterest-bg">
-        <div class=container id="pinterest">
-            <h4>PINTEREST</h4>
-            <h1>GET INSPIRED BY</h1>
-            <h1 id="pinterest-celeb-name">THEIR</h1>
-            <h1>STYLE</h1>
-        </div>
-    </div>
-
-    <!-- Makes "pinterest-bg.png" blur on scroll-->
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function (e) {
-                var s = $(window).scrollTop(),
-                    opacityVal = (s / 200);
-
-                $('#pinterest-bg').css('opacity', opacityVal);
+        <!--Scripting for Pinterest START-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $("#input").on("click", function () {
+                var searchbox = $("#search-box").val().trim();
+                console.log(searchbox);
             });
-        });
-    </script>
+        </script>
+        <!--Scripting for Pinterest END-->
+
+        <div id="pinterest-bg">
+            <div class=container id="pinterest">
+                <h4>PINTEREST</h4>
+                <h1>GET INSPIRED BY</h1>
+                <h1 id="pinterest-celeb-name">THEIR</h1>
+                <h1>STYLE</h1>
+            </div>
+        </div>
+
+        <!-- Makes "pinterest-bg.png" blur on scroll-->
+        <script>
+            $(document).ready(function () {
+                $(window).scroll(function (e) {
+                    var s = $(window).scrollTop(),
+                        opacityVal = (s / 200);
+
+                    $('#pinterest-bg').css('opacity', opacityVal);
+                });
+            });
+        </script>
+
+
+        <!--Scripting for Pinterest START-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $("#input").on("click", function () {
+                var searchbox = $("#search-box").val().trim();
+                console.log(searchbox);
+            });
+        </script>
+        <!--Scripting for Pinterest END-->
+
+
+
+        <!-- ETSY API ======================================================================  -->
+
+        <!-- START // ETSY API-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $("#input").on("click", function () {
+                var searchbox = $("#search-box").val().trim();
+                console.log(searchbox);
+                api_key = "i2jk5a8wa3dnatoty8ea57th";
+                terms = $('#search-box').val().trim();
+                etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=" +
+                    terms + "&limit=24&includes=Images:1&api_key=" + api_key;
+                $('#etsy-images').empty();
+                $('<p></p>').text('Searching for ' + terms).appendTo('#etsy-images');
+                $.ajax({
+                    url: etsyURL,
+                    dataType: 'jsonp',
+                    success: function (data) {
+                        if (data.ok) {
+                            $('#etsy-images').empty();
+                            if (data.count > 0) {
+                                $.each(data.results, function (i, item) {
+                                    $("<img/>").attr("src", item.Images[0].url_75x75).appendTo("#etsy-images").wrap(
+                                        "<a href='" + item.url + "'></a>"
+                                    );
+                                    $("<img/>").attr("id", "etsy-padding");
+                                    if (i % 4 == 3) {
+                                        $('<br/>').appendTo('#etsy-images');
+                                    }
+                                });
+                            } else {
+                                $('<p>No results.</p>').appendTo('#etsy-images');
+                            }
+                        } else {
+                            $('#etsy-images').empty();
+                            alert(data.error);
+                        }
+                    }
+                });
+                return false;
+            });
+        </script>
+        <!-- END// ETSY API-->
+
+
+        <!-- START // ETSY HTML DISPLAY -->
+        <div id="ebay-bg">
+            <div class=container id="ebay-text">
+                <h4>ETSY</h4>
+                <h1>MERCHANDISE</h1>
+
+                <div id="etsy-images"></div>
+            </div>
+
+        </div>
+        <!-- END //ETSY HTML DISPLAY -->
 
 
 
 
-    <!--Scripting for Pinterest START-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $("#input").on("click", function () {
-            var searchbox = $("#search-box").val().trim();
-            console.log(searchbox);
-        });
-    </script>
-    <!--Scripting for Pinterest END-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $("#input").on("click", function () {
-            var searchbox = $("#search-box").val().trim();
-            console.log(searchbox);
-        });
-    </script>
+        <!-- SOCIAL MEDIA API ======================================================================  -->
+        <div id="social-bg">
+            <div class=container id="twitter">
+                <h4>SOCIAL MEDIA</h4>
+                <h1>WHAT IS <h1 id="quote-celeb-name">HE</h1>
+                    <h1>SAYING NOW?</h1>
+
+                    <div class="advice-div">
+                        <!-- Advice Button-->
+                        <button type="button" class="btn btn-ad" id="adviceButton"><i class=" fab fa-advice pr-1"></i>
+                            Celeb
+                            Advice</button>
+
+                        <!-- Advice API -->
+                        <div class="getAdvice">
+                            <h1 id="showAdvice"></h1>
+                        </div>
+                    </div>
 
 
-    <!-- EBAY API-->
-    <div id="ebay-bg">
-        <div class=container id="ebay-text">
-            <h4>EBAY</h4>
-            <h1>MERCHANDISE</h1>
+                    <!-- <button type="button" class="btn btn-tw" id="social-btn"> Add All Social Media </button>
+                    <br> -->
+                    <!--Facebook-->
+                    <button type="button" class="btn btn-fb" id="fb"><i class="fab fa-facebook-f pr-1"></i>
+                        Facebook</button>
+                    <!--Twitter-->
+                    <button type="button" class="btn btn-tw" id="tw"><i class="fab fa-twitter pr-1"></i>
+                        Twitter</button>
+            </div>
+
         </div>
     </div>
 
 
-    <!-- SOCIAL MEDIA API -->
-    <div id="social-bg">
-        <div class=container id="twitter">
-            <h4>SOCIAL MEDIA</h4>
-            <h1>WHAT ARE THEY SAYING NOW?</h1>
 
-            <button type="button" class="btn btn-tw"> ADD ALL SOCIAL MEDIA </button>
-            <br>
-            <!--Facebook-->
-            <button type="button" class="btn btn-fb"><i class="fab fa-facebook-f pr-1"></i> Facebook</button>
-            <!--Twitter-->
-            <button type="button" class="btn btn-tw"><i class="fab fa-twitter pr-1"></i> Twitter</button>
-        </div>
+
+
+    <!-- POPULATES ALL SEARCHED QUERIES HERE ======================================================================  -->
+
+    <!-- <div id="searches-bg"> -->
+    <div class=container id="profiles">
+        <h4>RECENT SEARCHES</h4>
+        <H1>YOUR FAVORITE CELEBS</H1>
+
+
     </div>
-
-    <!-- POPULATES ALL SEARCHED QUERIES HERE -->
-    <div id="searches-bg">
-        <div class=container id="profiles">
-            <h4>RECENT SEARCHES</h4>
-            <H1>YOUR FAVORITE CELEBS</H1>
-        </div>
-        <!--<div class="card" style="width: 18rem;">
-        <img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">CELEB NAME HERE</h5>
-            <a href="..." class="btn btn-primary">LOAD PROFILE</a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-        <img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">CELEB NAME HERE</h5>
-            <a href="..." class="btn btn-primary">LOAD PROFILE</a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-        <img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">CELEB NAME HERE</h5>
-            <a href="..." class="btn btn-primary">LOAD PROFILE</a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-        <img src="assets/images/placement-image.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">CELEB NAME HERE</h5>
-            <a href="..." class="btn btn-primary">LOAD PROFILE</a>
-        </div>
-    </div> 
-
-    line commented out cause these are dummy profiles to test if cards would populate correctly
-    -->
-
-
     </div>
 
 
@@ -270,5 +345,7 @@
         });
     });
 </script>
+
+<script src="assets/javascript/gif.js"></script>
 
 </html>
