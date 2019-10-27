@@ -33,12 +33,14 @@
 
 </head>
 
-<!-- SEARCH BAR-->
+
 
 <body>
     <div>
 
         <!-- LANDING PAGE ======================================================================  -->
+
+
         <!-- START // MOVING GRADIENT BG / GRANIM -->
         <canvas id="canvas-image-blending"></canvas>
 
@@ -48,9 +50,10 @@
                 <img src="assets/images/public-eye-logo-03.png" id="logo">
             </div>
             <div>
-
+                <!-- SEARCH BAR-->
                 <input type="text" id="search-box" onfocus="this.value=''" value="Type in your Favorite Celebrity">
                 <i class="fas fa-search"></i>
+                <!-- GO BUTTON-->
                 <button type="button" class="btn btn-dark" id="input"> GO</button>
             </div>
 
@@ -185,7 +188,12 @@
                 <h1>GET INSPIRED BY</h1>
                 <h1 id="pinterest-celeb-name">THEIR</h1>
                 <h1>STYLE</h1>
+                <h1 class="linear-wipe" id="pinterest-cs">COMING SOON!</h1>
+
             </div>
+            <script>
+
+            </script>
         </div>
 
         <!-- Makes "pinterest-bg.png" blur on scroll-->
@@ -224,7 +232,7 @@
                 api_key = "i2jk5a8wa3dnatoty8ea57th";
                 terms = $('#search-box').val().trim();
                 etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=" +
-                    terms + "&limit=24&includes=Images:1&api_key=" + api_key;
+                    terms + "&limit=16&includes=Images:1&api_key=" + api_key;
                 $('#etsy-images').empty();
                 $('<p></p>').text('Searching for ' + terms).appendTo('#etsy-images');
                 $.ajax({
@@ -345,6 +353,13 @@
         });
     });
 </script>
+
+<div class="center">
+    <div class="footer">
+        <!-- LOGO -->
+        <img src="assets/images/public-eye-logo-03.png" id="footer-logo">
+    </div>
+</div>
 
 <script src="assets/javascript/gif.js"></script>
 

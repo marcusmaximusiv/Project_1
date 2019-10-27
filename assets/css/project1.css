@@ -1,56 +1,11 @@
-html { 
 
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
-  }
+/* GLOBAL ELEMENTS */
 
 body {
-
     background: rgb(17,26,41);
     background: linear-gradient(180deg, rgba(17,26,41,1) 0%, rgba(54,59,68,1) 50%, rgba(66,60,55,1) 100%);
 }
 
-
-#canvas-image {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.logo-div{
-    margin-top: 20vh;
-    margin-bottom: 20vh;
-}
-#logo{
-    height: 80px;
-}
-
-#canvas-image-blending{
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
-}
-
- #bg-carousel{
-    background-image: url("../images/giphy-bg.png"); 
-    background-repeat: no-repeat;
-    /* background-position: center; */
-    background-size: contain;
-    width: 100vw;
-
-}
-
-#carousel-wrapper{
-    padding-top: 600px;
-}
 h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight:700;
@@ -67,39 +22,6 @@ h4 {
     color: #dadada;
 }
 
-.container {
-    text-align: center;
-    min-height: 100vh;
-}
-
-
-#celeb-name-here {
-    font-size: 95px;
-    color: #ffffff;
-    text-shadow: 2px 2px 10px black;
-}
-
-
-#search-box {
-    padding-left: 50px;
-    padding-right:50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-style: solid;
-    border-width: 8px;
-    border-color: #ffffff;
-    background-color: #dbe1e9;
-    width:50%;
-    font-size: 20px;
-    font-family: 'Josefin Sans', sans-serif;
-
-}
-
-.card {
-    display: inline-block;
-    width: 18rem;
-}
-
 .center {
     margin: 0, auto;
     text-align: center;
@@ -107,6 +29,11 @@ h4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.container {
+    text-align: center;
+    min-height: 100vh;
 }
 
 .btn {
@@ -117,21 +44,96 @@ h4 {
     padding-top: 35px;
     padding-bottom: 32px;
     border-style: solid;
-    border-color: #ffffff;
-    border-width: 5px;
+    border-color: black;
+    border-width: 6px;
     border-radius: 0;
     margin-top: 0;
     margin-bottom: 5px;
     background: #f24179;
     color: #ffffff;
-    /* background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%); */
+}
+
+/* LOGO */
+.logo-div{
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+}
+#logo{
+    height: 250px;
+}
+
+
+/* SEARCH BOX*/
+#celeb-name-here {
+    font-size: 95px;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px black;
+}
+
+#search-box {
+    padding-left: 50px;
+    padding-right:50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: black;
+    background-color: #dbe1e9;
+    width:50%;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
 
 }
 
-#card {
+
+
+/* GRADIENT BACKGROUND */
+#canvas-image {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#canvas-image-blending{
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+}
+
+#carousel-wrapper{
+    padding-top: 600px;
+}
+
+
+
+/* PINTEREST */
+#pinterest-cs{
     font-family: 'Josefin Sans', sans-serif;
-background-color: none;
-margin-right: 20px;
+    font-weight:400;
+    font-size: 30px;
+    text-align: left;
+    color: #dadada;
+    letter-spacing: 0px;
+    margin-top: 10px;
+}
+
+
+
+/* GIPHY CAROUSEL */
+
+#bg-carousel{
+    background-image: url("../images/giphy-bg.png"); 
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: contain;
+    width: 100vw;
+
 }
 
 #image1{
@@ -156,12 +158,25 @@ margin-right: 20px;
     border-color: black;
 }
 
+
+/* PINTEREST */
+
 #pinterest {
-text-align: left;
-margin-top: 80px;
-color:#f24179;
+    text-align: left;
+    margin-top: 150px;
+    color:#f24179;
 }
 
+#pinterest-bg{
+    background-image: url("../images/pinterest-bg.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+
+}
+
+
+/* ETSY */
 #ebay-bg{
     background-image: url("../images/ebay-bg.png"); 
     background-repeat: no-repeat;
@@ -170,27 +185,25 @@ color:#f24179;
 }
 
 #ebay-text {
-text-align: right;
-margin-top: 80px;
-color:#b84d6f;
+    text-align: right;
+    margin-top: 350px;
+    color:#b84d6f;
 }
 
-#etsy-images{
-margin-top:10px,10px,10px,10px;
-height: 50px;
-
-}
+/* #etsy-images{
+    margin-top:5x,5px,5px,5px;
+    height: 100px;
+} */
 
 .etsy-image{
-    padding: 30px;
+   margin: 10px;
+    height: 150px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: black;
+
 }
 
-#pinterest-bg{
-    background-image: url("../images/pinterest-bg.png"); 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto;
-}
 
 #social-bg {
     background-image: url("../images/social-bg.png"); 
@@ -206,18 +219,15 @@ height: 50px;
     background-size: auto;  
 }
 
-#twitter{
-    text-align: left;
-margin-top: 80px;
-color:#f24179;
-padding-bottom: 30px;
-}
+
+
+/* CELEB ADVICE */
 
 #advice{
-text-align: left;
- margin-top: 80px;
- color:#f24179;
- padding-bottom: 30px;
+    text-align: left;
+    margin-top: 80px;
+    color:#f24179;
+    padding-bottom: 30px;
  }
 
 
@@ -232,11 +242,11 @@ text-align: left;
  }
 
  #adviceButton{
-margin-top: 20px;
-margin-bottom: 20px;
-margin-left: 30px;
-background-color:  #737b83;
-width:90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    background-color:  #737b83;
+    width:90%;
  }
 
 
@@ -249,21 +259,50 @@ width:90%;
  }
  .getAdvice{
     margin-top: 100px;
-
     padding-bottom: 30px;
     font-weight:700;
     padding-left: 50px;
     padding-right:50px;
     padding-top: 35px;
     padding-bottom: 32px;
-    /* border-style: solid;
-    border-color: #ffffff;
-    border-width: 5px; */
     border-radius: 0;
     margin-top: 0;
     margin-bottom: 5px;
  }
 
- /* #social-btn{
+ #twitter{
+    text-align: left;
+    margin-top: 250px;
+    color:#f24179;
+    padding-bottom: 30px;
+}
 
- } */
+/* PROFILE CARDS*/
+.card {
+    display: inline-block;
+    width: 18rem;
+}
+
+#card {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: none;
+    margin-right: 20px;
+}
+
+#profiles{
+margin-top: 250px;
+}
+
+/* FOOTER*/
+
+#footer-logo{
+    height: 150px;
+    padding: 25px;
+
+}
+
+.footer{
+    padding:50px, 100px, 50px, 100px;
+    background-color:#f24179;
+
+}
