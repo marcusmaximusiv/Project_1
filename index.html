@@ -106,7 +106,7 @@
                 card.append(card_body)
                 card_body.append('<h5 class="card-title">' + searchbox.toUpperCase() + '</h5>')
                 card_body.append('<a href="..." class="btn btn-primary">LOAD PROFILE</a>')
-                $("#pinterest-celeb-name").html(searchbox.toUpperCase() + "'S'")
+                $("#pinterest-celeb-name").html(searchbox.toUpperCase())
                 $("#quote-celeb-name").html(searchbox.toUpperCase())
                 $("#fb").attr("onclick", `window.location.href = "https://www.facebook.com/search/top/?q=${searchbox}"`)
                 $("#tw").attr("onclick", `window.location.href = "https://www.twitter.com/search?q=${searchbox}"`)
@@ -185,9 +185,9 @@
         <div id="pinterest-bg">
             <div class=container id="pinterest">
                 <h4>YOUTUBE</h4>
-                <h1>ENJOY YOUR FAVORITE ARTISTS</h1>
-                <h1 id="pinterest-celeb-name">THEIR</h1>
-                <h1>STYLE</h1>
+                <h1>LATEST VIDEO ON</h1>
+                <h1 id="pinterest-celeb-name">THEM</h1>
+
                 <div id="youtubevideo"></div>
             </div>
             <script>
@@ -214,7 +214,7 @@
             $("#input").on("click", function () {
                 var searchbox = $("#search-box").val().trim();
                 console.log(searchbox);
-                $("#youtubevideo").html('<iframe id="player" type="text/html" width="560" height="390" src="https://www.youtube.com/embed?listType=search&list=' + searchbox +'"frameborder="0"></iframe>')
+                $("#youtubevideo").html('<iframe id="player" type="text/html" width="560" height="390" src="https://www.youtube.com/embed?listType=search&list=' + searchbox + '"frameborder="0"></iframe>')
             });
         </script>
         <!--Scripting for Pinterest END-->
