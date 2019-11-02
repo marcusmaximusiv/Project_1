@@ -184,12 +184,11 @@
 
         <div id="pinterest-bg">
             <div class=container id="pinterest">
-                <h4>PINTEREST</h4>
-                <h1>GET INSPIRED BY</h1>
+                <h4>YOUTUBE</h4>
+                <h1>ENJOY YOUR FAVORITE ARTISTS</h1>
                 <h1 id="pinterest-celeb-name">THEIR</h1>
                 <h1>STYLE</h1>
-                <h1 class="linear-wipe" id="pinterest-cs">COMING SOON!</h1>
-
+                <div id="youtubevideo"></div>
             </div>
             <script>
 
@@ -215,6 +214,7 @@
             $("#input").on("click", function () {
                 var searchbox = $("#search-box").val().trim();
                 console.log(searchbox);
+                $("#youtubevideo").html('<iframe id="player" type="text/html" width="560" height="390" src="https://www.youtube.com/embed?listType=search&list=' + searchbox +'"frameborder="0"></iframe>')
             });
         </script>
         <!--Scripting for Pinterest END-->
